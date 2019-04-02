@@ -12,9 +12,4 @@ pluginManagement {
 		}
 	}
 }
-
-rootProject.name = 'k8s.proto'
-include 'front'
-include 'srvAdd'
-include 'srvMul'
-include 'dbWriter'
+rootProject.name = 'srvAdd'

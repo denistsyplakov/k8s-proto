@@ -1,4 +1,4 @@
-package com.dataart.dt.proto.k8s.mul.controllers;
+package com.dataart.dt.proto.k8s.add.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ public class EntryPoint {
     @ResponseBody
     public int add(@RequestParam int a,
                    @RequestParam int b) {
-        return a * b;
+        return a + b;
     }
 
 }
