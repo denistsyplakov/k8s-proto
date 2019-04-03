@@ -26,9 +26,6 @@ public class PubSub {
     private void init() {
         pubSubTemplate.subscribe("k8s-proto-2db", msg -> {
             String value = pubSubTemplate.getMessageConverter().fromPubSubMessage(msg.getPubsubMessage(), String.class);
-            log.info("Msg {} : {}",
-                    msg.getPubsubMessage().getMessageId(),
-                    value);
             proc.processMessage(value);
             msg.ack();
         });

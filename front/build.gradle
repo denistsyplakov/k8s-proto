@@ -25,6 +25,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'org.springframework.cloud:spring-cloud-gcp-starter-pubsub'
+    runtime 'com.google.cloud:google-cloud-logging-logback:0.84.0-alpha'
 }
 
 dependencyManagement {
