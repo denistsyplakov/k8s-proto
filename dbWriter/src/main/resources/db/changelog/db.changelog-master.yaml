@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: initial tables
+      author: den
+      changes:
+        - sql:
+            comment: Sample tabel to collect data from pub/sub
+            sql: |
+              CREATE TABLE data
+              (
+                "time_mark" timestamp without time zone NOT NULL,
+                "sum" bigint NOT NULL
+              );
+              CREATE UNIQUE INDEX idx_time_mark ON "data" (time_mark);
+

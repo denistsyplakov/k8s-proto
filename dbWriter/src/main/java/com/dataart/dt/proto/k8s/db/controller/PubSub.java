@@ -1,5 +1,6 @@
 package com.dataart.dt.proto.k8s.db.controller;
 
+import com.dataart.dt.proto.k8s.db.service.MessageProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.gcp.pubsub.core.PubSubTemplate;
@@ -14,16 +15,21 @@ public class PubSub {
 
     private final PubSubTemplate pubSubTemplate;
 
-    public PubSub(PubSubTemplate pubSubTemplate) {
+    private final MessageProcessor proc;
+
+    public PubSub(PubSubTemplate pubSubTemplate, MessageProcessor proc) {
         this.pubSubTemplate = pubSubTemplate;
+        this.proc = proc;
     }
 
     @PostConstruct
     private void init() {
         pubSubTemplate.subscribe("k8s-proto-2db", msg -> {
+            String value = pubSubTemplate.getMessageConverter().fromPubSubMessage(msg.getPubsubMessage(), String.class);
             log.info("Msg {} : {}",
                     msg.getPubsubMessage().getMessageId(),
-                    pubSubTemplate.getMessageConverter().fromPubSubMessage(msg.getPubsubMessage(), String.class));
+                    value);
+            proc.processMessage(value);
             msg.ack();
         });
     }
