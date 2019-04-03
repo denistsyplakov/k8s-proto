@@ -1,0 +1,14 @@
+version: '3'
+services:
+  front:
+    build: ./front
+    image: habbahen/k8s-proto-srv-front
+  srv-add:
+    build: ./srvAdd
+    image: habbahen/k8s-proto-srv-add
+  srv-mul:
+    build: ./srvMul
+    image: habbahen/k8s-proto-srv-mul
+  db-writer:
+    build: ./dbWriter
+    image: habbahen/k8s-proto-db-writer
