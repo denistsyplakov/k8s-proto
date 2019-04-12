@@ -13,7 +13,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.dataart.dt.proto.k8s'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '12'
 
 
 ext {
@@ -25,6 +25,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'org.springframework.cloud:spring-cloud-gcp-starter-pubsub'
+    implementation project(':utility')
     runtime 'com.google.cloud:google-cloud-logging-logback:0.84.0-alpha'
 }
 

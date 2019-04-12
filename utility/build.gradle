@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = 'com.dataart.dt.proto.k8s'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '12'
+
+dependencies{
+    compile('org.slf4j:slf4j-api:1.7.25')
+}
