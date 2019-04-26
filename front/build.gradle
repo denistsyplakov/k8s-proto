@@ -35,3 +35,12 @@ dependencyManagement {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     }
 }
+
+jib {
+    from {
+        image = 'openjdk:12-jdk-alpine'
+    }
+    to {
+        image = 'habbahen/k8s-proto-srv-front'
+    }
+}

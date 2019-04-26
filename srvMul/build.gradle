@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.2.0.M1'
     id 'java'
+    id 'com.google.cloud.tools.jib' version '1.1.2'    
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -24,10 +25,20 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     runtime 'com.google.cloud:google-cloud-logging-logback:0.84.0-alpha'
+    implementation project(':utility')
 }
 
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+jib {
+    from {
+        image = 'openjdk:12-jdk-alpine'
+    }
+    to {
+        image = 'habbahen/k8s-proto-srv-mul'
     }
 }

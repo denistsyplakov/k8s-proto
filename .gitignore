@@ -10,3 +10,15 @@ HELP.md
 *.iml
 *.ipr
 /out/
+
+# ignore properties files
+
+/front/application.properties
+/srvAdd/application.properties
+/srvMul/application.properties
+/dbWriter/application.properties
+
+/front/gcp.json
+/srvAdd/gcp.json
+/srvMul/gcp.json
+/dbWriter/gcp.json
