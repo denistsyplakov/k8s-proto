@@ -5,3 +5,9 @@ server.http2.enabled=true
 spring.application.name=front
 #Feign
 feign.client.config.add.loggerLevel=full
+
+service.add.host=add
+service.add.port=8082
+
+service.mul.host=mul
+service.mul.port=8081

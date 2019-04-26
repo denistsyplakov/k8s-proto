@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "add", url = "http://localhost:8082")
+@FeignClient(name = "add", url = "http://${service.add.host}:${service.add.port}")
 public interface Add {
 
     @RequestMapping(method = RequestMethod.GET, value = "/add?a={a}&b={b}")

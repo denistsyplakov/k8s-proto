@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(name = "mul", url = "http://localhost:8081")
+@FeignClient(name = "mul", url = "http://${service.mul.host}:${service.mul.port}")
 public interface Mul {
 
     @RequestMapping(method = RequestMethod.GET, value = "/mul?a={a}&b={b}")
