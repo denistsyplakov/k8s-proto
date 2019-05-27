@@ -22,3 +22,10 @@ Docker image has env variable GOOGLE_APPLICATION_CREDENTIALS=/config/gcp.json
 ### K8s
 
 In K8S we are injecting gcp.json into service /config directory via K8S ConfigMap
+
+# todo
+
+- use jib to build and run(?) docker images
+- use gRPC as an internal transport protocol
+- use plantuml + gradle plugin to generate arch diagrams (? commit to git? ) 
+- finalize k8s configuration 
