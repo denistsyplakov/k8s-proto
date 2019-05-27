@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface Mul {
 
     @RequestMapping(method = RequestMethod.GET, value = "/mul?a={a}&b={b}")
-    public int mul(@PathVariable("a")int a, @PathVariable("b") int b);
+    public int mul(@PathVariable("a") int a, @PathVariable("b") int b);
 
 }

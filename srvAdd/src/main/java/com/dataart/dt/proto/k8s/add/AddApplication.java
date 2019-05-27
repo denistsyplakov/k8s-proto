@@ -11,11 +11,11 @@ import java.io.IOException;
 @SpringBootApplication
 public class AddApplication {
 
-	static private Logger log = LoggerFactory.getLogger(AddApplication.class);
+    static private Logger log = LoggerFactory.getLogger(AddApplication.class);
 
-	public static void main(String[] args) throws IOException {
-		ConfigExternalizationUtil.externalizeConfig();
-		SpringApplication.run(AddApplication.class, args);
-	}
+    public static void main(String[] args) throws IOException {
+        ConfigExternalizationUtil.externalizeConfig();
+        SpringApplication.run(AddApplication.class, args);
+    }
 
 }

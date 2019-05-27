@@ -18,7 +18,7 @@ public class ConfigExternalizationUtil {
                     ", copying it to /application.properties");
             Files.copy(extConfig.toPath(), new File("/application.properties").toPath());
         } else {
-            log.info("Externalized config " + extConfig.toPath() + " not found" );
+            log.info("Externalized config " + extConfig.toPath() + " not found");
         }
     }
 

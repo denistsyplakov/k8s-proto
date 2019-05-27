@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface Add {
 
     @RequestMapping(method = RequestMethod.GET, value = "/add?a={a}&b={b}")
-    public int add(@PathVariable("a")int a,@PathVariable("b") int b);
+    public int add(@PathVariable("a") int a, @PathVariable("b") int b);
 
 }
